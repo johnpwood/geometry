@@ -1,0 +1,11 @@
+#main {
+  display: flex;
+  flex-direction: row; }
+
+#the-box {
+  width: 90vh;
+  height: 90vh; }
+
+#text-box {
+  height: 90vh;
+  width: calc(99vw - 100vh); }
