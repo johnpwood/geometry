@@ -45,9 +45,9 @@ Dir.glob("*/*") do |f|
       puts "hoping for element type, received: #{t}"
     end
     if(t == "R")
-      o["steps"].push(Hash("props" => props, "name" => name, "type" => type, "parents" => x))
+      o["elements"].push(Hash("props" => props, "name" => name, "type" => type, "parents" => x))
     else
-      o["steps"].push(Hash("name" => name, "type" => type, "parents" => x))
+      o["elements"].push(Hash("name" => name, "type" => type, "parents" => x))
     end
     i +=1
   end

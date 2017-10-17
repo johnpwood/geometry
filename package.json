@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/johnpwood/geometry#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "json": "^9.0.6",
+    "path": "^0.12.7"
   }
 }
