@@ -1,0 +1,22 @@
+{
+  "name": "geometry",
+  "description": "app for learning geometry",
+  "main": "index.js",
+  "authors": [
+    "John Wood <johnpwoodiv@gmail.com>"
+  ],
+  "license": "gpl",
+  "homepage": "none",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "ngDraggable": "^0.1.11",
+    "angular-jsx-graph": "^0.2.1"
+  }
+}

@@ -1,21 +1,30 @@
 var express = require('express');
-var path = require('path');
-var http = require('http');
 var json = require('json');
+var massive = require('massive');
+var bodyParser = require('body-parser');
+var http = require('http');
 
 var app = express();
 
-var publicPath = path.resolve(__dirname, "view");
+var publicPath = 'view';
+app.use(bodyParser.json());
+
+massive('postgres://geometry:secret@localhost/geometry').then(function(db){
+    app.set('db', db)}).catch(function(e){console.log(e);});
+							      
 app.use(express.static(publicPath));
 
 app.get('/api/proof', (req, res, next) => {
     res.json(require('./proofs/1/1.json'));
 });    
 
-app.use(function(request, response){
-    response.writeHead(200, {"Content-Type":"text/plain" });
-    response.end("You didn't find a static file.");
+app.get('/test', (req, res, next) => {
+    app.get('db').massive_example.find({}).then( results => {
+	res.json(results);
+    }).catch( e => {
+	res.json(e);
+    });
 });
-
+							      
 http.createServer(app).listen(3000);
 

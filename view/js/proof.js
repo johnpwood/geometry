@@ -1,1 +1,1 @@
-angular.module('proof', [])
+angular.module('proof', ['jsxGraph']);

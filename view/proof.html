@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <head>
-  <script type="text/javascript" src="../jsxgraphcore.js"></script>
   <link rel="stylesheet" type="text/css" href="./styles.css"/>
   <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
   <style>
@@ -13,9 +12,14 @@
       <p ng-repeat="step in proof.steps"> {{ step.text }} </p>
       <p> {{ proof.conclusion }} </p>
     </div>
-    <div id="the-box" class="jxgbox"></div>
+    <div id="the-box"
+	 class="jxgbox"
+	 jxg-board="{axis: false, grid:false, showCopyright:false, showNavigation:false, boundingbox: [0,10,10,0]}"
+	 jxg-callback="jxgCallback"></div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+  <script type="text/javascript" src="../jsxgraphcore.js"></script>
+  <script src="angular-jsx-graph.js"></script>
   <script src="js/proof.js"></script>
   <script src="js/proofCtrl.js"></script>
   <script src="js/proofSrvc.js"></script>

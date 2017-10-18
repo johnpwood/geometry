@@ -1,13 +1,9 @@
 angular.module('proof').controller('proofCtrl', function($scope, proofSrvc){
-    $scope.getProof = function(){
+    $scope.jxgCallback = function(board){
+    
 	proofSrvc.getProof().then(function(){
 	    $scope.proof = proofSrvc.proof;
-	    console.log(proofSrvc.proof);
 	    
-	    var board = JXG.JSXGraph.initBoard('the-box',
-					       {boundingbox: [0, 10, 10, 0],
-						axis:false, showCopyright:false,
-						showNavigation:false});
 	    elementsObject = {};
 
 	    $scope.proof.elements.forEach(function(x){
@@ -27,6 +23,7 @@ angular.module('proof').controller('proofCtrl', function($scope, proofSrvc){
 		    });
 		}
 	    }
+
 	    
 	    redrawGraph(0);
 
@@ -52,5 +49,4 @@ angular.module('proof').controller('proofCtrl', function($scope, proofSrvc){
 	    }
 	});
     };
-    $scope.getProof();
 });
