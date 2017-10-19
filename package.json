@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/johnpwood/geometry#readme",
   "dependencies": {
+    "connect-ensure-login": "^0.1.1",
     "express": "^4.16.2",
+    "express-session": "^1.15.6",
     "http": "0.0.0",
     "json": "^9.0.6",
     "massive": "^4.4.0",

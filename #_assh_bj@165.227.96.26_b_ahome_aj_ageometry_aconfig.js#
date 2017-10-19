@@ -1,0 +1,6 @@
+module.exports = {
+    sessionSecret:"don't look at this!!",
+    dbPass:"super, super, secret",
+    dbUser:"geometry",
+    database:"geometry",
+}
