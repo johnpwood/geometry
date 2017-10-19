@@ -1,5 +1,5 @@
 CREATE TABLE learner (
-       id serial primary key,
+       id serial PRIMARY KEY,
        profile_id text,
        nickname text,
        email text,

@@ -1,1 +1,1 @@
-INSERT INTO learner (profile_id, nickname) VALUES ($1, $2);
+INSERT INTO learner (profile_id, nickname, email, profile_object) VALUES ($1, $2, $3, $4);
