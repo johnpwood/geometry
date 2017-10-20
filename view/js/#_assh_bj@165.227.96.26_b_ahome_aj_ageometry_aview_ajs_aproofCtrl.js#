@@ -1,3 +1,4 @@
+
 angular.module('proof').controller('proofCtrl', function($scope, proofSrvc){
     $scope.jxgCallback = function(board){
     

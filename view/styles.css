@@ -1,11 +1,32 @@
 #main {
-  display: flex;
-  flex-direction: row; }
-
-#the-box {
-  width: 90vh;
-  height: 90vh; }
+  display: flex; }
 
 #text-box {
-  height: 90vh;
-  width: calc(99vw - 100vh); }
+  overflow: auto; }
+
+@media all and (orientation: landscape) {
+  #main {
+    flex-direction: row; }
+  #the-box {
+    width: 90vh;
+    height: 90vh; }
+  #text-box {
+    padding: 8px;
+    height: 90vh;
+    width: calc(97vw - 100vh); } }
+
+@media all and (orientation: portrait) {
+  #main {
+    flex-direction: column-reverse; }
+  #the-box {
+    width: 510px;
+    height: 510px; }
+  #text-box {
+    width: 98vw;
+    height: 98vw; }
+  svg {
+    width: 500px;
+    height: 500px; }
+  #the-box_foreignObj {
+    width: 510px !important;
+    height: 510px !important; } }
