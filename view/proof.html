@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<head>
-  <link rel="stylesheet" type="text/css" href="./styles.css"/>
-  <link rel="stylesheet" type="text/css" href="http://jsxgraph.uni-bayreuth.de/distrib/jsxgraph.css" />
-  <style>
-  </style>
-</head>
-<body ng-app="proof">
-  <div ng-controller="proofCtrl" id="main" style="height: 98vh; overflow:hidden; width:98vw">
-    <div id="text-box">
+
+  <div id="main" style="height: 98vh; overflow:hidden; width:98vw">
+    <div id="text-box" ng-app="proof" ng-controller="proofCtrl">
+      <geo-menu></geo-menu>
       <h3> {{ proof.statement }} </h3>
-      <p ng-repeat="step in proof.steps"> {{ step.text }} </p>
+      <p ng-repeat="step in proof.steps track by $index" ng-click="animate_frame($index)" ng-style="$index==currentStep?{'background-color':'yellow'}:{}">
+	{{ step.text }} </p>
       <p> {{ proof.conclusion }} </p>
+      <button ng-click="retreat()">Back one step</button>
+      <button ng-click="advance()">Forward one step</button>
     </div>
-    <div id="the-box"
-	 class="jxgbox"
-	 jxg-board="{axis: false, grid:false, showCopyright:false, showNavigation:false, boundingbox: [0,10,10,0], keepaspectratio:true}"
-	 jxg-callback="jxgCallback"></div>
+    <div id="the-box" class="jxgbox"></div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
-  <script type="text/javascript" src="../jsxgraphcore.js"></script>
-  <script src="angular-jsx-graph.js"></script>
-  <script src="js/proof.js"></script>
-  <script src="js/proofCtrl.js"></script>
-  <script src="js/proofSrvc.js"></script>
-</body>
+
+

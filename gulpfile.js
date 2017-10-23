@@ -6,6 +6,7 @@ gulp.task('hello', () => {
     console.log('howdy');
 });
 
+//remove emacs backups that clutter the folders:
 gulp.task('cleanmacs', () => {
     del('**/*~').then(p => {
 	console.log('deleted:\n '+ p.join('\n'));

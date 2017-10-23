@@ -1,8 +1,8 @@
-angular.module('proof').service('proofSrvc', function($http){
+angular.module('proof').service('proofService', function($http){
     self = this;
-    this.getProof = function(){
-	return $http.get('/api/proof').then(function(response){
+    this.getProof = function(book, prop){
+	return $http.get(`/api/proof/${book}/${prop}`).then(function(response) {
 	    self.proof = response.data;
-	});
+	})
     }
 });

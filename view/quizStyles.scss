@@ -1,0 +1,33 @@
+.stripey {
+	 display: flex;
+	 justify-content: space-between;
+	 padding:12px;
+	 color: #363;
+	 font-family: sans-serif;
+	 font-weight: 900;
+	 
+	 input:not(old) {
+	       opacity:0;
+	       }
+
+	  input:checked + label {
+	  background-color: #555;
+	   }
+
+	  label {
+	  padding-left:1.3em;
+	  padding-right:1.3em;
+	  border: 3px solid #363;
+	  padding-top:2px;
+	  }
+
+}
+
+
+
+.stripey:nth-child(2n){
+     background: #bdb;
+     }
+     
+
+

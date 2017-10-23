@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="./styles.css"/>
+  <link rel="stylesheet" type="text/css" href="./quizStyles.css">
+  <style>
+  </style>
+</head>
+<body ng-app="proof">
+  <div id="main" style="height: 98vh; overflow:hidden; width:98vw" ng-controller="quizCtrl">
+    <div id="answers">
+      <geo-menu></geo-menu>
+      <form name="quizAnswers">
+	<div ng-repeat="question in questions track by $index" class="stripey">
+	  {{ $index + 1 }}:
+	    <input type="radio" ng-model="answers[$index]" value="a"><label>A</label>
+	    <input type="radio" ng-model="answers[$index]" value="b"><label>B</label>
+	    <input type="radio" ng-model="answers[$index]" value="c"><label>C</label>
+	    <input type="radio" ng-model="answers[$index]" value="d"><label>D</label>
+	    <input type="radio" ng-model="answers[$index]" value="e"><label>E</label>
+	</div>
+      </form>
+    </div>
+    <h1>{{ answers[0] }}</h1>
+    <h1>{{ answers[1] }}</h1>
+    <h1>{{ answers[2] }}</h1>
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
+  <script type="text/javascript" src="../jsxgraphcore.js"></script>
+
+  <script src="js/proof.js"></script>
+  <script src="js/quizCtrl.js"></script>
+  <script src="js/quizSrvc.js"></cript>
+</body>

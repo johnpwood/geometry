@@ -59,10 +59,9 @@ app.get('/callback',
 	    if(!req.user) {
 		throw new Error('user null');
 	    }
-	    res.redirect("/proof.html");
+	    res.redirect("/home");
 	}
-       );
-
+       )
 app.get('/login',
 	passport.authenticate('auth0', {}, function(req, res){
 	    res.redirect("/");
@@ -70,10 +69,14 @@ app.get('/login',
        );
 
 
-app.use(express.static('view'));
+app.use(express.static(__dirname + '/view'));
 
-app.get('/api/proof', (req, res, next) => { 
-    res.json(require('./proofs/1/1.json'));
+//app.get('/proof/:book/:prop', (req, res, next) => {
+//    res.redirect(`/proof.html?book=${req.params.book}`
+//}
+
+app.get('/api/proof/:book/:prop', (req, res, next) => { 
+    res.json(require(`./proofs/${req.params.book}/${req.params.prop}.json`));
 })
     // .get('/sessiontest', (req, res, next) => {
     // 	if(req.session.views) {
