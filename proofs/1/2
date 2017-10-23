@@ -2,25 +2,25 @@ To draw a line from a given point a line equal to a given line.
 Thus, a line, AL, has been drawn from the given point A equal to the given line, BC.
 Let the given point be A and the given line BC.
 A B C BC
-Join A and B. [p1]
+Join A and B. [1.p1]
 AB
 Draw an equilateral triangle, ADB, on AB. [1.1]
 AB AD BD A B D
-Draw DA out to E [p2]
+Draw DA out to E [1.p2]
 DE A D
-Draw DB out to F [p2]
+Draw DB out to F [1.p2]
 DF D B
-Draw circle CGH with center B and radius BC, intersecting line DF at G. [p3]
+Draw circle CGH with center B and radius BC, intersecting line DF at G. [1.p3]
 CGH BC B C G H
-Draw circle GKL with center D and radius DG, intersecting line DE at L. [p3]
+Draw circle GKL with center D and radius DG, intersecting line DE at L. [1.p3]
 GKL G K L D DL
-Now BG will be equal to BC, since they are radii of circle CGH. [1d15]
+Now BG will be equal to BC, since they are radii of circle CGH. [1.d15]
 B C G BG BC CGH
-DL will equal DG, since they are radii of of circle GKL.
+DL will equal DG, since they are radii of of circle GKL. [1.d15]
 D L G DL DG GKL
-DA was constructed equal to DB, so the remainders, AL and BG will be equal. [a3]
+DA was constructed equal to DB, so the remainders, AL and BG will be equal. [1.a3]
 A L B G AL BG
-If AL is equal to BG, it must also be equal to BC, since BG equals BC. [a1]
+If AL is equal to BG, it must also be equal to BC, since BG equals BC. [1.a1]
 A L B C AL BC
 elements:
 A P 2 3

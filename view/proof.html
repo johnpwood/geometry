@@ -4,7 +4,8 @@
       <geo-menu></geo-menu>
       <h3> {{ proof.statement }} </h3>
       <p ng-repeat="step in proof.steps track by $index" ng-click="animate_frame($index)" ng-style="$index==currentStep?{'background-color':'yellow'}:{}">
-	{{ step.text }} </p>
+	{{ step.text }} <a href="{{ '/#!/proof/' + step.link[1] + '/' + step.link[2] }}">
+      {{step.link[0]}}</a></p>
       <p> {{ proof.conclusion }} </p>
       <button ng-click="retreat()">Back one step</button>
       <button ng-click="advance()">Forward one step</button>

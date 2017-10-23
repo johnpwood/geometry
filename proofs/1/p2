@@ -1,0 +1,11 @@
+Given a line, it can be extended indefinitely.
+It can also be extended in the other direction.
+Let AB be the given line.
+A B AB
+AB can be drawn past B as far as we like.
+A B AC
+elements:
+A P 2 5
+B P 3 7
+AB S A B
+AC R A B

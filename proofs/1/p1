@@ -1,0 +1,8 @@
+Given any to points, one can draw a line between them.
+A line has been drawn between the two points.
+Let A and B be the given points.  AB will be the line drawn through them.
+A B AB
+elements:
+A P 2 3
+B P 6 8
+AB S A B

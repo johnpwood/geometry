@@ -3,6 +3,12 @@ angular.module('proof').controller('proofCtrl', function($scope, $stateParams, p
     proofService.getProof($stateParams.book, $stateParams.prop).then(function(){
 	$scope.proof = proofService.proof;
 
+	$scope.proof.steps.forEach(function(x){
+	    let y = /\[(\d+)\.(\w+)\]/;
+	    x.link = y.exec(x.text)
+	    x.text = x.text.replace(y,'');
+	});
+	
 	var board = JXG.JSXGraph.initBoard('the-box', {
 	    boundingbox: [0, 10, 10, 0],
 	    keepaspectratio: true,

@@ -1,0 +1,13 @@
+Given a center and radius, a circle can be drawn.
+ABC will be the required circle.
+Let A be the given center and AB the given radius.
+A B AB
+ABC will be the given circle.
+A B C D AB BCD
+elements:
+A P 4 4
+B P 5 6
+AB S A B
+BCD C A B
+C G BCD
+D G BCD
