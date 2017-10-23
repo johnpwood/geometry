@@ -59,7 +59,7 @@ app.get('/callback',
 	    if(!req.user) {
 		throw new Error('user null');
 	    }
-	    res.redirect("/home");
+	    res.redirect("/");
 	}
        )
 app.get('/login',

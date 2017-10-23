@@ -1,5 +1,5 @@
 angular.module('proof').controller('proofCtrl', function($scope, $stateParams, proofService){
-    
+    $scope.currentStep = 0;
     proofService.getProof($stateParams.book, $stateParams.prop).then(function(){
 	$scope.proof = proofService.proof;
 
@@ -13,6 +13,7 @@ angular.module('proof').controller('proofCtrl', function($scope, $stateParams, p
      	elementsObject = {};
 
      	$scope.proof.elements.forEach(function(x){
+	    console.log(x.name);
      	    elementsObject[x.name] = board.create(x.type, x.parents, {name:x.name, label:{fontSize:30}});
      	    elementsObject[x.name].setAttribute(x.props);
      	    elementsObject[x.name].setAttribute({visible:false});
@@ -26,9 +27,10 @@ angular.module('proof').controller('proofCtrl', function($scope, $stateParams, p
      		Object.keys(elementsObject).forEach(function(x){
      		    elementsObject[x].setAttribute({fillOpacity:0.25, strokeOpacity:0.25});
      		});
-     		var r;
-     		if(r = $scope.proof.steps[i].reveal){
-     		    r.forEach(function(x){
+     		if($scope.proof.steps[i].reveal){
+		    console.log("step: " + i + "\n")
+     		    $scope.proof.steps[i].reveal.forEach(function(x){
+			console.log("element: " + x + "\n");
      			elementsObject[x].setAttribute({visible:true, strokeOpacity:1, fillOpacity:1});
      		    });
 		}
@@ -55,12 +57,12 @@ angular.module('proof').controller('proofCtrl', function($scope, $stateParams, p
  	    },1300)
  	}
 
- 	for(let i = 1; i < $scope.proof.steps.length; i++){
-	    window.setTimeout(function(){$scope.animate_frame(i)}, 3000*i);}
+ 	//for(let i = 1; i < $scope.proof.steps.length; i++){
+	  //  window.setTimeout(function(){$scope.animate_frame(i)}, 3000*i);}
     })
 
     $scope.advance = function(){
-	if($scope.currentStep < $scope.proof.steps.length){
+	if($scope.currentStep < $scope.proof.steps.length-1){
 	    $scope.currentStep += 1;
 	}
 	$scope.animate_frame($scope.currentStep);
